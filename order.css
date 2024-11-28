@@ -1,0 +1,11 @@
+form.form {
+    display: flex;
+    flex-direction: column;
+}
+.form__group {
+    width: 600px;
+}
+#order-btn {
+    border: none;
+    width: 150px;
+}

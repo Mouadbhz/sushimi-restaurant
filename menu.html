@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <title>Menu | Sushimi Restaurant</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./globalStyles.css">
+  <link rel="stylesheet" href="./components.css">
+  <!-- aos library css  -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Add your custom css -->
+  <link rel="stylesheet" href="./menu.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--css normally files-->
+  <link rel="stylesheet" href="normalize.css">
+  <!--Font Awsome library-->
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Nav Section -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav__wrapper">
+        <a href="./index.html" class="logo">
+          <img src="./images/sushimi logo.svg" alt="Sushimi">
+        </a>
+        <nav>
+          <div class="nav__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-menu">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </div>
+          <div class="nav__bgOverlay"></div>
+          <ol class="nav__list">
+            <div class="nav__close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div class="nav__list__wrapper">
+
+              <li><a class="nav__link" href="./index.html">Home</a></li>
+              <li><a class="nav__link" href="./menu.html">Menu</a></li>
+              <li><a class="nav__link" href="./about.html">About</a></li>
+              <li><a class="nav__link" href="./contact.html">Contact</a></li>
+              <li></li>
+              <li class="li-order-a"><i class="fa-solid fa-cart-plus" style="color: #731010;"></i></li>
+              <li></li>
+              <li><a href="./booking.html" class="btn primary-btn">Book Table</a></li>
+            </div>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- End Nav Section -->
+  <!--Search bar Section-->
+  <section id="search_bar" data-aos="fade-left">
+    <div class="container">
+      <div class="search">
+        <div class="icon"></div>
+        <div class="input">
+          <input type="text" placeholder="Search food name here..." id="mysearch">
+          <!--onclick="javascript:alert('Hello World!')"-->
+          <button id="search-btn" onclick="click()">button</button>
+        </div>
+        <span class="clear" ></span>
+      </div>
+    </div>
+  </section>
+  <!--End Search bar Section-->
+  <!--Filter Section-->
+  <section id="filter" data-aos="fade-up">
+    <div class="container">
+      <div id="button">
+        <button class="button-value" onclick="filterProduct('All')">All</button>
+        <button class="button-value" onclick="filterProduct('Entrees')">Entrees</button>
+        <button class="button-value" onclick="filterProduct('Appetizers')">Appetizers</button>
+        <button class="button-value" onclick="filterProduct('Sushi')">Sushi</button>
+        <button class="button-value" onclick="filterProduct('Sashimi')">Sashimi</button>
+        <button class="button-value" onclick="filterProduct('Nigiri')">Nigiri</button>
+        <button class="button-value" onclick="filterProduct('Desserts')">Desserts</button>
+      </div>
+    </div>
+  </section>
+  <!--End filter section-->
+  <!-- page Title -->
+  <section id="page__title" data-aos="fade-up">
+    <div class="container">
+      <h2 class="page__title__text">
+        Explore Our Menu
+      </h2>
+    </div>
+  </section>
+   <!--End page Title-->
+  <!-- Entrees Dishes -->
+  <section id="dishGrid" data-aos="fade-up" class="section Entrees hide">
+    <div class="container">
+      <h2 class="dishGrid__title Entrees-title Entrees hide">
+        Entrees
+      </h2>
+      <div class="dishGrid__wrapper">
+        <div class="dishGrid__item Entrees id-1 hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/beef negimaki.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Beef Negimaki
+            </h3>
+            <h3 class="dishGrid__item__price">$13</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-1',1)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-1',1)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Entrees hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/donburi.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Donburi
+            </h3>
+            <h3 class="dishGrid__item__price">$26</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-2',2)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-2',2)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Entrees hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/tempura.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Tempura
+            </h3>
+            <h3 class="dishGrid__item__price">$9</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-3',3)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-3',3)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Entrees hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/teriyaki kitchen.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Teriyaki 
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-4',4)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-4',4)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Entrees hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/unagi.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Unagi
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-5',5)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-5',5)">-</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Entrees Dishes -->
+  <!-- Appetizers Dishes -->
+  <section id="dishGrid" class="section Appetizers hide">
+    <div class="container">
+      <h2 class="dishGrid__title Appetizers hide">
+        Appetizers
+      </h2>
+      <div class="dishGrid__wrapper">
+        <div class="dishGrid__item Appetizers hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Agedashi Tofu .png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Agedashi Tofu
+            </h3>
+            <h3 class="dishGrid__item__price">$7</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-6',6)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-6',6)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Appetizers hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Edamame .png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Edamame
+            </h3>
+            <h3 class="dishGrid__item__price">$11</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-7',7)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-7',7)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Appetizers hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Gyoza.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Gyoza
+            </h3>
+            <h3 class="dishGrid__item__price">$5</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-8',8)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-8',8)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Appetizers hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Sunomono.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Sunomono
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-9',9)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-9',9)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Appetizers hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/colselaw.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Colselaw
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-10',10)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-10',10)">-</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Appetizers Dishes -->
+  <!-- Sushi Rolls Dishes -->
+  <section id="dishGrid" class="section Sushi hide">
+    <div class="container">
+      <h2 class="dishGrid__title Sushi hide">
+        Sushi Rolls
+      </h2>
+      <div class="dishGrid__wrapper">
+        <div class="dishGrid__item Sushi hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Dragon Roll.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Dragon Roll
+            </h3>
+            <h3 class="dishGrid__item__price">$14</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-11',11)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-11',11)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Sushi hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Spicy Tuna Roll .png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Spicy Tuna Roll
+            </h3>
+            <h3 class="dishGrid__item__price">$10</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-12',12)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-12',12)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Sushi hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Philadelphia Roll.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Philadelphia Roll
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-13',13)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-13',13)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Sushi hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/California Roll.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              California Roll
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-14',14)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-14',14)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Sushi hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Sasazushi.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Sasazushi
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-15',15)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-15',15)">-</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Sushi Rolls Dishes -->
+    <!-- Sashimi Dishes -->
+    <section id="dishGrid" class="section Sashimi hide">
+      <div class="container">
+        <h2 class="dishGrid__title Sashimi hide">
+          Sashimi
+        </h2>
+        <div class="dishGrid__wrapper">
+          <div class="dishGrid__item Sashimi hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/sashimi Yellowtail.png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Sashimi Yellowtail
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-16',16)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-16',16)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Sashimi hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/sashimi Octopus.png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Sashimi Octopus
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-17',17)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-17',17)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Sashimi hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/sashimi salmon.png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Sashimi Salamon
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-18',18)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-18',18)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Sashimi hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/sashimi tuna.png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Sashimi tuna
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-19',19)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-19',19)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Sashimi hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/red snapper .png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                red snapper
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-20',20)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-20',20)">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Sashimi Dishes -->
+      <!-- Nigiri Dishes -->
+  <section id="dishGrid" class="section Nigiri hide">
+    <div class="container">
+      <h2 class="dishGrid__title Nigiri hide">
+        Nigiri
+      </h2>
+      <div class="dishGrid__wrapper">
+        <div class="dishGrid__item Nigiri hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Ebi.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Ebi
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-21',21)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-21',21)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Nigiri hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Hamachi.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Hamachi
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-22',22)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-22',22)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Nigiri hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Maguro.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Maguro
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-23',23)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-23',23)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Nigiri hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/unagi nigiri.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Unagi sushi
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-24',24)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-24',24)">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="dishGrid__item Nigiri hide">
+          <div class="dishGrid__item__img">
+            <img src="./images/Tamago.png" alt="food img">
+          </div>
+          <div class="dishGrid__item__info">
+            <h3 class="dishGrid__item__title">
+              Tamago
+            </h3>
+            <h3 class="dishGrid__item__price">$12</h3>
+            <div class="dishGrid__item__stars">
+              <img src="./images/3star.png" alt="3 star">
+            </div>
+            <div class="dishGrid__item__order__buttons">
+              <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-25',25)">+</button>
+              <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-25',25)">-</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Nigiri Dishes -->
+    <!-- Desserts Dishes -->
+    <section id="dishGrid" class="section Desserts hide">
+      <div class="container">
+        <h2 class="dishGrid__title Desserts hide">
+          Desserts
+        </h2>
+        <div class="dishGrid__wrapper">
+          <div class="dishGrid__item Desserts hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/Tempura Ice Cream .png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Tempura Ice Cream
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-26',26)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-26',26)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Desserts hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/Mochi Ice Cream .png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Mochi Ice Cream
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-27',27)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-27',27)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Desserts hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/Green Tea Cheesecake.png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Green Tea Cheesecake
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-28',28)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-28',28)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Desserts hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/Matcha Swiss Roll.png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Matcha Swiss Roll
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-29',29)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-29',29)">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="dishGrid__item Desserts hide">
+            <div class="dishGrid__item__img">
+              <img src="./images/Dorayaki.png" alt="food img">
+            </div>
+            <div class="dishGrid__item__info">
+              <h3 class="dishGrid__item__title">
+                Dorayaki
+              </h3>
+              <h3 class="dishGrid__item__price">$12</h3>
+              <div class="dishGrid__item__stars">
+                <img src="./images/3star.png" alt="3 star">
+              </div>
+              <div class="dishGrid__item__order__buttons">
+                <button id="add-btn" class="dishGrid__item__order__button add-btn" onclick="AddOrDelete('add','id-30',30)">+</button>
+                <button id="delete-btn" class="dishGrid__item__order__button delete-btn" onclick="AddOrDelete('delete','id-30',30)">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="before-footer hide" style="padding-bottom: 10rem;">
+      <div class="container"></div>
+    </div>
+    <!-- End Desserts Dishes -->
+
+        <!-- page Title -->
+        <section id="page__title__order" class="hide" data-aos="fade-up">
+          <div class="container">
+            <h2 class="page__title__order__text">
+              Your food order
+            </h2>
+          </div>
+        </section>
+ 
+  <!--Orders section-->
+  <section id="order_section" class="orders hide">
+    <div class="container">
+        <div class="dishGrid__wrapper__order">
+            <div class="dishGrid__item__order Entrees id-1 hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/beef negimaki.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Beef Negimaki
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',1)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',1)">+</span>
+                  </div>
+                  <!--
+                  <div class="dishGrid__item__order__counter">
+                    <button class="decrease-item"><span>-</span></button>
+                    <span class="number">1</span>
+                    <button class="increase-item">+</button>
+                  </div>
+                -->
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">13</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Entrees hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/donburi.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Donburi
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',2)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',2)">+</span>
+                  </div>  
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">26</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Entrees hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/tempura.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Tempura
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',3)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',3)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">9</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Entrees hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/teriyaki kitchen.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Teriyaki 
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',4)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',4)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">12</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Entrees hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/unagi.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Unagi
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',5)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',5)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Appetizers hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Agedashi Tofu .png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Agedashi Tofu
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',6)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',6)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">7</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Appetizers hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Edamame .png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Edamame
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',7)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',7)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">11</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Appetizers hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Gyoza.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Gyoza
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',8)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',8)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">5</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Appetizers hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Sunomono.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Sunomono
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',9)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',9)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Appetizers hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/colselaw.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Colselaw
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',10)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',10)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Sushi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Dragon Roll.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Dragon Roll
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',11)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',11)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">14</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Sushi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Spicy Tuna Roll .png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Spicy Tuna Roll
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',12)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',12)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Sushi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Philadelphia Roll.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Philadelphia Roll
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',13)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',13)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Sushi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/California Roll.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    California Roll
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',14)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',14)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+            <div class="dishGrid__item__order Sushi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Sasazushi.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Sasazushi
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',15)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',15)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Sashimi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/sashimi Yellowtail.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Sashimi Yellowtail
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',16)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',16)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Sashimi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/sashimi Octopus.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Sashimi Octopus
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',17)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',17)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Sashimi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/sashimi salmon.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Sashimi Salamon
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',18)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',18)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Sashimi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/sashimi tuna.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Sashimi tuna
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',19)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',19)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Sashimi hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/red snapper .png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    red snapper
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',20)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',20)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Nigiri hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Ebi.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Ebi
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',21)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',21)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Nigiri hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Hamachi.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Hamachi
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',22)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',22)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Nigiri hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Maguro.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Maguro
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',23)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',23)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="dishGrid__item__order Nigiri hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/unagi nigiri.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Unagi sushi
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',24)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',24)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+              </div>
+              </div>
+              <div class="dishGrid__item__order Nigiri hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Tamago.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Tamago
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',25)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',25)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="Desserts dishGrid__item__order hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Tempura Ice Cream .png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Tempura Ice Cream
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',26)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',26)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="Desserts dishGrid__item__order hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Mochi Ice Cream .png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Mochi Ice Cream
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',27)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',27)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="Desserts dishGrid__item__order hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Green Tea Cheesecake.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Green Tea Cheesecake
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',28)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',28)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="Desserts dishGrid__item__order hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Matcha Swiss Roll.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Matcha Swiss Roll
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',29)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',29)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="Desserts dishGrid__item__order hide">
+                <div class="dishGrid__item__order__img">
+                  <img src="./images/Dorayaki.png" alt="food img">
+                </div>
+                <div class="dishGrid__item__order__info">
+                  <h3 class="dishGrid__item__order__title">
+                    Dorayaki
+                  </h3>
+                  <div class="dishGrid__item__order__counter">
+                    <span class="minus" onclick="decrement('minus',30)">-</span>
+                    <span class="num">0</span>
+                    <span class="plus" onclick="increment('plus',30)">+</span>
+                  </div>
+                  <h3 class="dishGrid__item__order__price">$<span class="food_price">10</span></h3>
+                </div>
+              </div>
+              <div class="no-order hide">
+                <div class="container">
+                  <h2>You have no order</h2>
+                </div>
+              </div>
+              <div class="total-price hide">
+                <div class="conatiner">
+                  <div class="t">
+                    <div class="total">
+                      <h2>Total price : </h2>
+                      <h2><span class="total_price">0</span>$</h2>
+                    </div>
+                    <div class="confirm_order">
+                      <a href="./order.html" class="confirm-order">Order</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </section>
+  <!--End Orders section-->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__col1">
+          <div class="footer__logo">
+            <img src="./images/sushimi logo.svg" alt="Sushimi">
+          </div>
+          <p class="footer__desc">
+            Fresh and delicious traditional Bangladeshi food to delight the whole family.
+          </p>
+          <div class="footer__socials">
+            <h4 class="footer__socials__title">Follow us</h4>
+            <ol class="footer__socials__list">
+              <li>
+                <a href="https://web.facebook.com/profile.php?id=100092413972892">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-facebook">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/sashimirestau" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-twitter">
+                    <path
+                      d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                  </svg>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="footer__col2">
+          <h3 class="footer__text__title">
+            Links
+          </h3>
+          <ol class="footer__text">
+            <li>
+              <a href="/index.html">Home</a>
+            </li>
+            <li>
+              <a href="./menu.html">Menu</a>
+            </li>
+            <li>
+              <a href="./booking.html">Book Table</a>
+            </li>
+            <li>
+              <a href="./about.html">About Us</a>
+            </li>
+            <li>
+              <a href="./contact.html">contact Us</a>
+            </li>
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col3">
+          <h3 class="footer__text__title">
+            Support
+          </h3>
+          <ol class="footer__text">
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Support Center</a>
+            </li>
+            <li>
+              <a href="#">Feedback</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col4">
+          <h3 class="footer__text__title">
+            Contact
+          </h3>
+          <ol class="footer__text">
+            <li>
+              <a href="#">+880123</a>
+            </li>
+            <li>
+              <a href="#">sashimirestaurant1@gmail.com</a>
+            </li>
+            <li>
+              <a href="#">Ali Mendjli , Constantine , Algeria</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <p class="copyright__text">
+        © copyright 2023 Sushimi Restaurant | All rights reserved
+      </p>
+    </div>
+  </div>
+  <!-- End Footer -->
+  <!-- aos script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- custom script -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
